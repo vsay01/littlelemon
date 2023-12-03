@@ -9,7 +9,11 @@ import SwiftUI
 
 struct Menu: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Little lemon")
+            Text("Chicago")
+            Text("We are a fmaily owned mediterranean restaurant, focused on traditional recipes served with a modern twists.")
+        }
     }
 }
 

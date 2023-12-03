@@ -15,31 +15,41 @@ struct Onboarding: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var email = ""
+    @State private var isLoggedIn = false
     
     var body: some View {
-        VStack {
-            TextField(
-                "First Name",
-                text: $firstName
-            )
-            TextField(
-                "Last Name",
-                text: $lastName
-            )
-            TextField(
-                "Email",
-                text: $email
-            )
-            Button(
-                "Register",
-                action: {
-                    if (!firstName.isEmpty && !lastName.isEmpty && !email.isEmpty && email.isValidEmail()) {
-                        UserDefaults.standard.set(firstName, forKey: kFirstName)
-                        UserDefaults.standard.set(lastName, forKey: kLastName)
-                        UserDefaults.standard.set(email, forKey: kEmail)
-                    }
+        NavigationView {
+            VStack {
+                NavigationLink (
+                    destination: Home(),
+                    isActive: $isLoggedIn
+                ) {
+                    EmptyView()
                 }
-            )
+                TextField(
+                    "First Name",
+                    text: $firstName
+                )
+                TextField(
+                    "Last Name",
+                    text: $lastName
+                )
+                TextField(
+                    "Email",
+                    text: $email
+                )
+                Button(
+                    "Register",
+                    action: {
+                        if (!firstName.isEmpty && !lastName.isEmpty && !email.isEmpty && email.isValidEmail()) {
+                            UserDefaults.standard.set(firstName, forKey: kFirstName)
+                            UserDefaults.standard.set(lastName, forKey: kLastName)
+                            UserDefaults.standard.set(email, forKey: kEmail)
+                            isLoggedIn = true
+                        }
+                    }
+                )
+            }
         }
     }
 }
