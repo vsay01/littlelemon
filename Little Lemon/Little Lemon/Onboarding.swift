@@ -7,9 +7,40 @@
 
 import SwiftUI
 
+let kFirstName = "first name key"
+let kLastName = "last name key"
+let kEmail = "email key"
+
 struct Onboarding: View {
+    @State private var firstName = ""
+    @State private var lastName = ""
+    @State private var email = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TextField(
+                "First Name",
+                text: $firstName
+            )
+            TextField(
+                "Last Name",
+                text: $lastName
+            )
+            TextField(
+                "Email",
+                text: $email
+            )
+            Button(
+                "Register",
+                action: {
+                    if (!firstName.isEmpty && !lastName.isEmpty && !email.isEmpty && email.isValidEmail()) {
+                        UserDefaults.standard.set(firstName, forKey: kFirstName)
+                        UserDefaults.standard.set(lastName, forKey: kLastName)
+                        UserDefaults.standard.set(email, forKey: kEmail)
+                    }
+                }
+            )
+        }
     }
 }
 
