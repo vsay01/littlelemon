@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9033A4C62B437EFE0060B933 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A4C52B437EFE0060B933 /* Color.swift */; };
+		9033A4EE2B4382A90060B933 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A4ED2B4382A90060B933 /* AppFont.swift */; };
+		9033A4F02B438EF90060B933 /* FontTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A4EF2B438EF90060B933 /* FontTemplate.swift */; };
+		9033A4F22B43951B0060B933 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A4F12B43951B0060B933 /* ViewExtension.swift */; };
+		9033A4F42B4395600060B933 /* AppFontTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A4F32B4395600060B933 /* AppFontTemplate.swift */; };
+		9033A5022B43BE4C0060B933 /* MarkaziText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9033A4FC2B43BE4B0060B933 /* MarkaziText-Regular.ttf */; };
+		9033A5032B43BE4C0060B933 /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9033A4FD2B43BE4B0060B933 /* Karla-Regular.ttf */; };
+		9033A5042B43BE4C0060B933 /* MarkaziText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9033A4FE2B43BE4C0060B933 /* MarkaziText-Medium.ttf */; };
+		9033A5052B43BE4C0060B933 /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9033A4FF2B43BE4C0060B933 /* Karla-Bold.ttf */; };
+		9033A5062B43BE4C0060B933 /* Karla-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9033A5002B43BE4C0060B933 /* Karla-Medium.ttf */; };
+		9033A5072B43BE4C0060B933 /* MarkaziText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9033A5012B43BE4C0060B933 /* MarkaziText-Bold.ttf */; };
 		90EA73312B1D02E400BEC806 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA73302B1D02E400BEC806 /* UserProfile.swift */; };
 		90EA73342B1D40AA00BEC806 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA73322B1D40AA00BEC806 /* Persistence.swift */; };
 		90EA73352B1D40AA00BEC806 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA73332B1D40AA00BEC806 /* FetchedObjects.swift */; };
@@ -24,6 +35,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9033A4C52B437EFE0060B933 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9033A4EC2B43813D0060B933 /* Little-Lemon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Little-Lemon-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9033A4ED2B4382A90060B933 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		9033A4EF2B438EF90060B933 /* FontTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTemplate.swift; sourceTree = "<group>"; };
+		9033A4F12B43951B0060B933 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		9033A4F32B4395600060B933 /* AppFontTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFontTemplate.swift; sourceTree = "<group>"; };
+		9033A4FC2B43BE4B0060B933 /* MarkaziText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-Regular.ttf"; sourceTree = "<group>"; };
+		9033A4FD2B43BE4B0060B933 /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
+		9033A4FE2B43BE4C0060B933 /* MarkaziText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-Medium.ttf"; sourceTree = "<group>"; };
+		9033A4FF2B43BE4C0060B933 /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
+		9033A5002B43BE4C0060B933 /* Karla-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Medium.ttf"; sourceTree = "<group>"; };
+		9033A5012B43BE4C0060B933 /* MarkaziText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-Bold.ttf"; sourceTree = "<group>"; };
 		90EA73302B1D02E400BEC806 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		90EA73322B1D40AA00BEC806 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		90EA73332B1D40AA00BEC806 /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
@@ -53,6 +76,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9033A4C72B437F7F0060B933 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9033A4FF2B43BE4C0060B933 /* Karla-Bold.ttf */,
+				9033A5002B43BE4C0060B933 /* Karla-Medium.ttf */,
+				9033A4FD2B43BE4B0060B933 /* Karla-Regular.ttf */,
+				9033A5012B43BE4C0060B933 /* MarkaziText-Bold.ttf */,
+				9033A4FE2B43BE4C0060B933 /* MarkaziText-Medium.ttf */,
+				9033A4FC2B43BE4B0060B933 /* MarkaziText-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9033A4F52B43BB410060B933 /* FontStyle */ = {
+			isa = PBXGroup;
+			children = (
+				9033A4ED2B4382A90060B933 /* AppFont.swift */,
+				9033A4C52B437EFE0060B933 /* Color.swift */,
+				9033A4EF2B438EF90060B933 /* FontTemplate.swift */,
+				9033A4F12B43951B0060B933 /* ViewExtension.swift */,
+				9033A4F32B4395600060B933 /* AppFontTemplate.swift */,
+			);
+			path = FontStyle;
+			sourceTree = "<group>";
+		};
 		90F2DF292B1CDB3200643B8C = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +120,9 @@
 		90F2DF342B1CDB3300643B8C /* Little Lemon */ = {
 			isa = PBXGroup;
 			children = (
+				9033A4F52B43BB410060B933 /* FontStyle */,
+				9033A4EC2B43813D0060B933 /* Little-Lemon-Info.plist */,
+				9033A4C72B437F7F0060B933 /* Fonts */,
 				90EA73332B1D40AA00BEC806 /* FetchedObjects.swift */,
 				90EA73322B1D40AA00BEC806 /* Persistence.swift */,
 				90F2DF352B1CDB3300643B8C /* Little_LemonApp.swift */,
@@ -158,7 +209,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F2DF3E2B1CDB3500643B8C /* Preview Assets.xcassets in Resources */,
+				9033A5042B43BE4C0060B933 /* MarkaziText-Medium.ttf in Resources */,
+				9033A5072B43BE4C0060B933 /* MarkaziText-Bold.ttf in Resources */,
+				9033A5022B43BE4C0060B933 /* MarkaziText-Regular.ttf in Resources */,
+				9033A5062B43BE4C0060B933 /* Karla-Medium.ttf in Resources */,
+				9033A5052B43BE4C0060B933 /* Karla-Bold.ttf in Resources */,
 				90F2DF3A2B1CDB3500643B8C /* Assets.xcassets in Resources */,
+				9033A5032B43BE4C0060B933 /* Karla-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,16 +228,21 @@
 			files = (
 				90EA733C2B1D489C00BEC806 /* ExampleDatabase.xcdatamodeld in Sources */,
 				90F2DF472B1CDCFB00643B8C /* Onboarding.swift in Sources */,
+				9033A4EE2B4382A90060B933 /* AppFont.swift in Sources */,
 				90F2DF362B1CDB3300643B8C /* Little_LemonApp.swift in Sources */,
 				90EA733E2B2F371F00BEC806 /* MenuDetail.swift in Sources */,
+				9033A4C62B437EFE0060B933 /* Color.swift in Sources */,
+				9033A4F22B43951B0060B933 /* ViewExtension.swift in Sources */,
 				90EA73312B1D02E400BEC806 /* UserProfile.swift in Sources */,
 				90EA73342B1D40AA00BEC806 /* Persistence.swift in Sources */,
 				90EA73352B1D40AA00BEC806 /* FetchedObjects.swift in Sources */,
 				90F2DF4B2B1CEDEF00643B8C /* Home.swift in Sources */,
+				9033A4F42B4395600060B933 /* AppFontTemplate.swift in Sources */,
 				90F2DF492B1CE1D600643B8C /* StringExtension.swift in Sources */,
 				90EA73372B1D417600BEC806 /* MenuList.swift in Sources */,
 				90F2DF4D2B1CEE2D00643B8C /* Menu.swift in Sources */,
 				90EA73392B1D418300BEC806 /* MenuItem.swift in Sources */,
+				9033A4F02B438EF90060B933 /* FontTemplate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,12 +375,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Little Lemon/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Little-Lemon-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -330,8 +397,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlelemon.app.Little-Lemon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,12 +417,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Little Lemon/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Little-Lemon-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -367,8 +439,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.littlelemon.app.Little-Lemon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

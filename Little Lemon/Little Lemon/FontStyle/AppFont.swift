@@ -9,10 +9,10 @@ import SwiftUI
 import Foundation
 
 enum AppFont: String {
-    case karlaBold = "fonts/Karla-Bold"
-    case karlaMedium = "fonts/Karla-Medium"
-    case karlaRegular = "fonts/Karla-Regular"
-    case MarkaziTextBold = "fonts/MarkaziText-Bold"
-    case MarkaziTextMedium = "fonts/MarkaziText-Medium"
-    case MarkaziTextRegular = "fonts/MarkaziText-Regular"
+    case karlaBold = "Karla-Bold"
+    case karlaMedium = "Karla-Medium"
+    case karlaRegular = "Karla-Regular"
+    case MarkaziTextBold = "MarkaziText-Bold"
+    case MarkaziTextMedium = "MarkaziText-Medium"
+    case MarkaziTextRegular = "MarkaziText-Regular"
 }

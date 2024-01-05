@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct UserProfile: View {
-    private let firstName = UserDefaults.standard.string(forKey: kFirstName) ?? ""
-    private let lastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
+    private let firstName = UserDefaults.standard.string(forKey: kName) ?? ""
     private let email = UserDefaults.standard.string(forKey: kEmail) ?? ""
+    
+    @State var isLogoutTrigger = false
     
     @Environment(\.presentationMode) var presentation // reference the presentation environment in SwiftUI which will allow you to reach the navigation logic
     
@@ -19,13 +20,13 @@ struct UserProfile: View {
             Text("Personal information")
             Image("profile-image-placeholder")
             
-            Text("First Name: \(firstName)")
-            Text("Last Name: \(lastName)")
+            Text("Name: \(firstName)")
             Text("Email: \(email)")
-            
-            Button("Logout") {
-                UserDefaults.standard.set(false, forKey: kIsLoggedIn)
-                self.presentation.wrappedValue.dismiss()
+            NavigationLink(destination: Onboarding(), isActive: $isLogoutTrigger) {
+                Button("Logout") {
+                    isLogoutTrigger = true
+                    UserDefaults.standard.set(false, forKey: kIsLoggedIn)
+                }
             }
             Spacer()
         }
