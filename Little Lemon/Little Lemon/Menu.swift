@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct Menu: View {
+    
+    enum SortBy:String {
+        case category = "category"
+    }
+    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Dish.entity(), sortDescriptors: [])
         var dishes: FetchedResults<Dish>
     @State private var searchText = ""
+    @State private var categoryText = ""
+    @State var sortBy = SortBy.category
+    @State var sortByCategory = false
+    @State private var selectedCategoryStarter = false
+    @State private var selectedCategoryMains = false
+    @State private var selectedCategoryDesserts = false
+    @State private var selectedCategorySides = false
     
     var body: some View {
         VStack {
@@ -63,62 +75,117 @@ struct Menu: View {
                     HStack {
                         Text("Starters")
                             .padding(4)
-                            .background(.secondary3)
+                            .background(selectedCategoryStarter ? Color.primary2 : .secondary3)
                             .cornerRadius(10)
                             .foregroundColor(.primary1)
+                            .onTapGesture {
+                                if (selectedCategoryStarter) {
+                                    categoryText = ""
+                                    selectedCategoryStarter = false
+                                } else {
+                                    categoryText = "Starters"
+                                    selectedCategoryStarter = true
+                                    selectedCategoryMains = false
+                                    selectedCategoryDesserts = false
+                                    selectedCategorySides = false
+                                }
+                            }
 
                         Text("Mains")
                             .padding(4)
-                            .background(.secondary3)
+                            .background(selectedCategoryMains ? Color.primary2 : .secondary3)
                             .cornerRadius(10)
                             .foregroundColor(.primary1)
-                                
+                            .onTapGesture {
+                                if (selectedCategoryMains) {
+                                    categoryText = ""
+                                    selectedCategoryMains = false
+                                } else {
+                                    categoryText = "Mains"
+                                    selectedCategoryMains = true
+                                    selectedCategoryStarter = false
+                                    selectedCategoryDesserts = false
+                                    selectedCategorySides = false
+                                }
+                            }
+                        
                         Text("Desserts")
                             .padding(4)
-                            .background(.secondary3)
+                            .background(selectedCategoryDesserts ? Color.primary2 : .secondary3)
                             .cornerRadius(10)
                             .foregroundColor(.primary1)
-                                
+                            .onTapGesture {
+                                if (selectedCategoryDesserts) {
+                                    categoryText = ""
+                                    selectedCategoryDesserts = false
+                                } else {
+                                    categoryText = "Desserts"
+                                    selectedCategoryDesserts = true
+                                    selectedCategoryStarter = false
+                                    selectedCategoryMains = false
+                                    selectedCategorySides = false
+                                }
+                            }
+                        
                         Text("Sides")
                             .padding(4)
-                            .background(.secondary3)
+                            .background(selectedCategorySides ? Color.primary2 : .secondary3)
                             .cornerRadius(10)
                             .foregroundColor(.primary1)
+                            .onTapGesture {
+                                if (selectedCategorySides) {
+                                    categoryText = ""
+                                    selectedCategorySides = false
+                                } else {
+                                    categoryText = "Sides"
+                                    selectedCategorySides = true
+                                    selectedCategoryStarter = false
+                                    selectedCategoryDesserts = false
+                                    selectedCategoryMains = false
+                                }
+                            }
                     }
                 }
                 .padding(.horizontal, 14)
                 Divider().padding(.vertical, 12)
             }
             
-            List(dishes, id: \.id) { dish in
-                NavigationLink(
-                    destination: MenuDetail(item: dish)
-                ) {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(dish.title ?? "")
-                                .fontTemplate(.cardTitle)
-                            Text(dish.detail ?? "")
-                                .fontTemplate(.paragraphText)
-                            Text("$\(dish.price ?? "")")
-                                .fontTemplate(.cardTitle)
-                        }
-                        Spacer()
-                        if let url = dish.image {
-                            AsyncImage(url: URL(string: url)) { phase in
-                                if let image = phase.image {
-                                    image.resizable() // Displays the loaded image.
-                                } else if phase.error != nil {
-                                    Image(.littleLemon)
-                                             .resizable()
-                                             .frame(width: 150, height: 50, alignment: .center)
-                                } else {
-                                    Image(.littleLemon)
-                                             .resizable()
-                                             .frame(width: 150, height: 50, alignment: .center)
+            FetchedObjects(
+                predicate:NSCompoundPredicate(andPredicateWithSubpredicates: [buildPredicateSearchText(), buildPredicateCategoryText()]),
+                sortDescriptors: buildSortDescriptors())
+            { (dishes: [Dish]) in
+                List {
+                    ForEach(dishes, id:\.self) { dish in
+                        NavigationLink(
+                            destination: MenuDetail(item: dish)
+                        ) {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(dish.title ?? "")
+                                        .fontTemplate(.cardTitle)
+                                    Text(dish.detail ?? "")
+                                        .fontTemplate(.paragraphText)
+                                    Text("$\(dish.price ?? "")")
+                                        .fontTemplate(.cardTitle)
+                                }
+                                Spacer()
+                                if let url = dish.image {
+                                    AsyncImage(url: URL(string: url)) { phase in
+                                        if let image = phase.image {
+                                            image.resizable() // Displays the loaded image.
+                                        } else if phase.error != nil {
+                                            Image(.littleLemon)
+                                                .resizable()
+                                                .frame(width: 150, height: 50, alignment: .center)
+                                        } else {
+                                            Image(.littleLemon)
+                                                .resizable()
+                                                .frame(width: 150, height: 50, alignment: .center)
+                                        }
+                                    }
+                                    .frame(maxWidth: 150, maxHeight: 100, alignment: .trailing)
                                 }
                             }
-                            .frame(maxWidth: 150, maxHeight: 100, alignment: .trailing)
                         }
                     }
                 }
@@ -140,10 +207,27 @@ struct Menu: View {
         HStack {
             Image(systemName: "magnifyingglass").foregroundColor(.secondary4)
             TextField("Search", text: $searchText)
-                .fontTemplate(.leadText)
+                .fontTemplate(.cardTitle)
         }
         .padding(7)
         .background(Color.secondary3)
+    }
+    
+    func buildPredicateSearchText() -> NSPredicate {
+        return searchText == "" ? NSPredicate(value: true) : NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+    }
+                
+    func buildPredicateCategoryText() -> NSPredicate {
+        return categoryText == "" ? NSPredicate(value: true) : NSPredicate(format: "category CONTAINS[cd] %@", categoryText)
+    }
+                
+    func buildSortDescriptors () -> [NSSortDescriptor] {
+        return [
+            NSSortDescriptor(key: "category",
+                             ascending: false,
+                             selector:
+                                #selector(NSString .localizedStandardCompare))
+        ]
     }
     
     func getMenuData() throws {
@@ -179,6 +263,7 @@ struct Menu: View {
                         newDish.image = menuItem.image
                         newDish.price = menuItem.price
                         newDish.detail = menuItem.description
+                        newDish.category = menuItem.category
                         print(newDish)
                     }
                     try? viewContext.save()

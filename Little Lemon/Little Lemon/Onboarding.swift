@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-let kName = "name key"
+let kFirstName = "first name key"
+let kLastName = "last name key"
 let kEmail = "email key"
 let kIsLoggedIn = "kIsLoggedIn"
 
 struct Onboarding: View {
-    @State private var name = ""
+    @State private var firstName = ""
+    @State private var lastName = ""
     @State private var email = ""
     @State private var isLoggedIn = false
     let persistence = PersistenceController.shared
@@ -56,11 +58,20 @@ struct Onboarding: View {
                     ) {
                         EmptyView()
                     }
-                    Text("Name *")
+                    Text("First Name *")
                         .fontTemplate(.paragraphText)
                     TextField(
                         "",
-                        text: $name
+                        text: $firstName
+                    )
+                    .textFieldStyle(.roundedBorder)
+                    .padding(.vertical, 8)
+                    
+                    Text("Last Name *")
+                        .fontTemplate(.paragraphText)
+                    TextField(
+                        "",
+                        text: $lastName
                     )
                     .textFieldStyle(.roundedBorder)
                     .padding(.vertical, 8)
@@ -75,8 +86,11 @@ struct Onboarding: View {
                     Button(
                         "Log in",
                         action: {
-                            if (!name.isEmpty && !email.isEmpty && email.isValidEmail()) {
-                                UserDefaults.standard.set(name, forKey: kName)
+                            if (!firstName.isEmpty &&
+                                !lastName.isEmpty &&
+                                !email.isEmpty && email.isValidEmail()) {
+                                UserDefaults.standard.set(firstName, forKey: kFirstName)
+                                UserDefaults.standard.set(lastName, forKey: kLastName)
                                 UserDefaults.standard.set(email, forKey: kEmail)
                                 isLoggedIn = true
                                 UserDefaults.standard.set(isLoggedIn, forKey: kIsLoggedIn)
