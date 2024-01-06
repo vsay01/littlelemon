@@ -16,5 +16,6 @@ Creating a food-ordering app for the Little Lemon restaurant. It will display th
 
 ## Screen record
 
-https://github.com/vsay01/littlelemon/assets/6526127/beeef752-2c59-4e76-9ae1-2cdc403d779d
+
+https://github.com/vsay01/littlelemon/assets/6526127/dd60d1b5-d0e0-4fe2-b079-02ba56401ded
 
